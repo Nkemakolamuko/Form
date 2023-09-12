@@ -103,8 +103,9 @@
         <div class="card">
             <h1>Login Form</h1>
     
-            <form class="teamData">
-                <input type="email" name="email" placeholder="adejokemi@gmail.com" required id="lastName"> <br> 
+            <form id="teamData">
+                <label>First Name:</label> <br>
+                <input type="text" name="name" placeholder="Adejoke Sherifat" required id="firstName"> <br> 
                 <label>Password:</label> <br>
                 <input type="password" name="passsword" placeholder="**********" required id="password"> <br> 
                 <input type="submit"> <br> 
@@ -118,13 +119,33 @@
     
     
         <script>
-            let firstName = document.getElementById('firstName');
-            let lastName = document.getElementById('lastName');
-            let password = document.getElementById('password');
-            let todayDay = document.getElementById('todayDay');
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                let teamData = document.querySelector('#teamData');
+                teamData.addEventListener('submit', function(e) {
+                    e.preventDefault()
+                    let firstName = document.querySelector('#firstName').value;
+                    let password = document.querySelector('#password').value;
     
-            
+                    // localStorage.getItem(firstName, password)
+                    // if((firstName) === password) {
+                    //     alert(`exist`)
+                    // } else {
+                    //     alert(`Unrecognized`)
+                    // }
+
+                    if(localStorage.getItem(firstName) == password) {
+                        alert(`Yes You exist Yo!!`)
+                    } else {
+                        alert(`I don't recognized!!`)
+                    }
+                    teamData.reset()
+    
+                })
+            })
+    
         </script>
+
     </body>
     </html>
 </body>

@@ -102,7 +102,7 @@
     <div class="card">
         <h1>Registration Form</h1>
 
-        <form class="teamData">
+        <form id="teamData">
             <label>Name:</label> <br>
             <input type="text" name="name" placeholder="Adejoke Sherifat" required id="firstName"> <br> 
             <label>Email:</label> <br>
@@ -122,15 +122,20 @@
 
 
     <script>
-        let firstName = document.getElementById('firstName');
-        let lastName = document.getElementById('lastName');
-        let password = document.getElementById('password');
-        let todayDay = document.getElementById('todayDay');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            let teamData = document.querySelector('#teamData');
+            teamData.addEventListener('submit', function(e) {
+                e.preventDefault()
+                let firstName = document.querySelector('#firstName').value;
+                let password = document.querySelector('#password').value;
 
-        localStorage.setItem("First-Name", JSON.parse(firstName))
-        localStorage.setItem("Last-Name", JSON.parse(lastName))
-        localStorage.setItem("Password", JSON.parse(password))
-        localStorage.setItem("Today", JSON.parse(todayDay))
+                localStorage.getItem(firstName)
+                localStorage.setItem(firstName, password)
+                teamData.reset()
+
+            })
+        })
 
     </script>
 </body>
