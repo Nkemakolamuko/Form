@@ -90,6 +90,10 @@
         input[type="submit"]:active {
             transform: scale(0.95);
         }
+
+        #link {
+            padding-top: 20px;
+        }
     
         </style>
     
@@ -97,21 +101,16 @@
     <body>
     
         <div class="card">
-            <h1>Registration Form</h1>
+            <h1>Login Form</h1>
     
             <form class="teamData">
-                <label>Name:</label> <br>
-                <input type="text" name="name" placeholder="Adejoke Sherifat" required id="firstName"> <br> 
-                <label>Email:</label> <br>
                 <input type="email" name="email" placeholder="adejokemi@gmail.com" required id="lastName"> <br> 
                 <label>Password:</label> <br>
                 <input type="password" name="passsword" placeholder="**********" required id="password"> <br> 
-                <label>Today's Date:</label> <br>
-                <input type="date" name="Select Date" required id="todayDay"> <br> 
                 <input type="submit"> <br> 
             </form>
 
-            <div>
+            <div id="link">
                 <a href="../index.html">Sign Up</a>
             </div>
     
